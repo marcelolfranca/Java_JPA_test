@@ -12,11 +12,11 @@ public class Program {
 
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
 		EntityManager em =emf.createEntityManager();
+		Pessoa p1 = new Pessoa(null, "joão da silva", "joao@gmail.com");
+		Pessoa p2 = new Pessoa(null, "josé", "ze@gmail.com");
+		Pessoa p3 = new Pessoa(null, "maria", "maria@gmail.com");
 		
 		for (int i=0; i<10000; i++) {
-			Pessoa p1 = new Pessoa(null, "joão da silva", "joao@gmail.com");
-			Pessoa p2 = new Pessoa(null, "josé", "ze@gmail.com");
-			Pessoa p3 = new Pessoa(null, "maria", "maria@gmail.com");
 			em.getTransaction().begin();
 			em.persist(p1);
 			em.persist(p2);
